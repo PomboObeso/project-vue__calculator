@@ -1,23 +1,24 @@
 <template>
     <div class="calculator">
         <Display value="1000" />
-        <Button label="AC" triple />
-        <Button label="/" operation/>
-        <Button label="7" />
-        <Button label="8" />
-        <Button label="9" />
-        <Button label="*" operation />
-        <Button label="4" />
-        <Button label="5" />
-        <Button label="6" />
-        <Button label="-" operation />
-        <Button label="1" />
-        <Button label="2" />
-        <Button label="3" />
-        <Button label="+" operation />
-        <Button label="0" double />
-        <Button label="."  />
-        <Button label="=" operation />
+        <!-- FLAG: Resolvi refatorar o nome da função personalizada para onCalc -->
+        <Button label="AC" triple @onCalc="clearMemory" />
+        <Button label="/" operation @onCalc="setOperation"/>
+        <Button label="7" @onCalc="addDigit" />
+        <Button label="8" @onCalc="addDigit" />
+        <Button label="9" @onCalc="addDigit" />
+        <Button label="*" operation @onCalc="setOperation" />
+        <Button label="4" @onCalc="addDigit" />
+        <Button label="5" @onCalc="addDigit" />
+        <Button label="6" @onCalc="addDigit" />
+        <Button label="-" operation @onCalc="setOperation" />
+        <Button label="1" @onCalc="addDigit" />
+        <Button label="2" @onCalc="addDigit" />
+        <Button label="3" @onCalc="addDigit" />
+        <Button label="+" operation @onCalc="setOperation" />
+        <Button label="0" @onCalc="addDigit" double />
+        <Button label="." @onCalc="addDigit" />
+        <Button label="=" operation @onCalc="setOperation" />
     </div>
 </template>
 
@@ -26,7 +27,15 @@ import Display from '@/components/Display.vue';
 import Button from '@/components/Button.vue';
 
 export default {
-    components: {Button, Display}
+    components: {Button, Display},
+    methods: {
+        clearMemory() {
+        },
+        setOperation(operation) {
+        },
+        addDigit(n) {
+        }
+    }
 }
 </script>
 
